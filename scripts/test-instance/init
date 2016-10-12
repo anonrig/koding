@@ -26,7 +26,7 @@ export KONFIG_SNEAKERS3_AWSSECRETACCESSKEY="" \
        KONFIG_SNEAKERS3_AWSREGION=""
 
 npm install --unsafe-perm
-./configure --config dev --host $HOST:8090 --disable-segment
+./configure --config dev --host http://$HOST.xip.io:8090 --hostname $HOST.xip.io --publicPort 8090 --disable-segment
 go/build.sh
 make -C client dist
 
