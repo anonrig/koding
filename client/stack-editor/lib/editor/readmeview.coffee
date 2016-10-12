@@ -2,11 +2,9 @@ kd = require 'kd'
 Encoder = require 'htmlencode'
 MarkdownEditorView = require './markdowneditorview'
 StackBaseEditorTabView = require './stackbaseeditortabview'
-defaults = require 'app/util/stacks/defaults'
 
 
 module.exports = class ReadmeView extends StackBaseEditorTabView
-
 
   constructor: (options = {}, data) ->
 
@@ -16,7 +14,7 @@ module.exports = class ReadmeView extends StackBaseEditorTabView
 
     content = if stackTemplate?.description \
       then Encoder.htmlDecode stackTemplate?.description
-      else defaults.description
+      else ''
 
     @editorView   = @addSubView new MarkdownEditorView
       content     : content
