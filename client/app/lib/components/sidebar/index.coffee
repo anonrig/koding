@@ -125,7 +125,7 @@ module.exports = class Sidebar extends React.Component
 
     ['Edit', 'Initialize'].forEach (name) => menuItems[name] = { callback }
     menuItems['Clone'] = { callback }  if canCreateStacks() or isAdmin()
-    menuItems['Make Team Default'] = { callback } if isAdmin() and draft.get('machines').length
+    menuItems['Make Team Default'] = { callback } if isAdmin() and draft.get('machines').size
 
     { top } = findDOMNode(@refs["draft-#{id}"]).getBoundingClientRect()
 
