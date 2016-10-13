@@ -67,15 +67,15 @@ func defaultNoTunnel() bool {
 }
 
 func defaultKeygenURL() string {
-	return config.Builtin.Endpoints.URL("kloud", protocol.Environment)
+	return config.MustKloudURL(protocol.Environment)
 }
 
 func defaultBucketName() string {
-	return config.Builtin.Buckets.ByEnv("publiclogs", protocol.Environment).Name
+	return config.MustPublicLogsBucket(protocol.Environment).Name
 }
 
 func defaultBucketRegion() string {
-	return config.Builtin.Buckets.ByEnv("publiclogs", protocol.Environment).Region
+	return config.MustPublicLogsBucket(protocol.Environment).Region
 }
 
 func main() {

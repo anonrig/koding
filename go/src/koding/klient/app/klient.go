@@ -685,10 +685,8 @@ func newKite(kconf *KlientConfig) *kite.Kite {
 	// kontrolUrl claim, assuming it's the responsibility of the
 	// klient to overwrite it during installation to a
 	// proper value.
-	//
-	// If the url was not overwritten, we default to production kontrol.
 	if k.Config.KontrolURL == "http://127.0.0.1:3000/kite" {
-		k.Config.KontrolURL = konfig.Builtin.Endpoints.URL("kontrol", kconf.Environment)
+		k.Config.KontrolURL = konfig.MustKontrolURL(kconf.Environment)
 	}
 
 	return k
