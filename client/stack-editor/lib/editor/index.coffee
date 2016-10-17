@@ -967,6 +967,6 @@ module.exports = class StackEditorView extends kd.View
 
     [ credential ] = @credentialStatusView.credentialsData
     { slug } = kd.singletons.groupsController.getCurrentGroup()
-    credential.shareWith { target: slug }, (err) =>
+    credential.shareWith { target: slug }, (err) ->
       console.warn 'Failed to share credential:', err  if err
       callback()
