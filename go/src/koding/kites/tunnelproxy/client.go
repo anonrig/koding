@@ -9,7 +9,6 @@ import (
 
 	"koding/httputil"
 	cfg "koding/kites/config"
-	"koding/klient/protocol"
 
 	"github.com/cenkalti/backoff"
 	"github.com/koding/kite"
@@ -30,7 +29,7 @@ var (
 // BuiltinTunnelKiteURL gives tunnel server kite URL base on the given
 // environment.
 func BuiltinTunnelKiteURL() string {
-	return string(cfg.Builtin.Endpoints.Tunnel)
+	return string(cfg.Builtin.Endpoints.TunnelServer)
 }
 
 // ClientOptions are used to alternate behavior of

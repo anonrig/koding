@@ -10,7 +10,6 @@ import (
 
 	"koding/httputil"
 	"koding/kites/config"
-	"koding/klient/protocol"
 )
 
 // StatusError describes a HTTP reponse error.
