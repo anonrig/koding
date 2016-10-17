@@ -64,7 +64,7 @@ func (d *director) EndpointPublicIP() string {
 		return "http://echoip.net"
 	}
 
-	return config.MustIpURL(protocol.Environment)
+	return string(config.Builtin.Endpoints.IP)
 }
 
 func (d *director) EndpointIsReachable(port string) string {
@@ -72,7 +72,7 @@ func (d *director) EndpointIsReachable(port string) string {
 		return "http://rjk.io/test/" + port
 	}
 
-	return config.MustIpCheckURL(protocol.Environment) + "/" + port
+	return string(config.Builtin.Endpoints.IPCheck) + "/" + port
 }
 
 func (d *director) ShouldRetry(err error) bool {

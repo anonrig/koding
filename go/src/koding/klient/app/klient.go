@@ -686,7 +686,7 @@ func newKite(kconf *KlientConfig) *kite.Kite {
 	// klient to overwrite it during installation to a
 	// proper value.
 	if k.Config.KontrolURL == "http://127.0.0.1:3000/kite" {
-		k.Config.KontrolURL = konfig.MustKontrolURL(kconf.Environment)
+		k.Config.KontrolURL = string(konfig.Builtin.Endpoints.Kontrol)
 	}
 
 	return k

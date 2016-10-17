@@ -83,11 +83,11 @@ func NewKonfig(e *Environments) *Konfig {
 	return &Konfig{
 		KiteKeyFile:     "/etc/kite/kite.key",
 		KlientURL:       "http://127.0.0.1:56789/kite",
-		KontrolURL:      Builtin.Endpoints.URL("kontrol", e.Env),
-		KloudURL:        Builtin.Endpoints.URL("kloud", e.Env),
-		TunnelURL:       Builtin.Endpoints.URL("tunnelserver", e.Env),
-		KlientLatestURL: Builtin.Endpoints.URL("klient-latest", e.klientEnv()),
-		KDLatestURL:     Builtin.Endpoints.URL("kd-latest", e.kdEnv()),
+		KontrolURL:      string(Builtin.Endpoints.Kontrol),
+		KloudURL:        string(Builtin.Endpoints.Kloud),
+		TunnelURL:       string(Builtin.Endpoints.TunnelServer),
+		KlientLatestURL: string(Builtin.Endpoints.KlientLatest.Get(e.klientEnv())),
+		KDLatestURL:     string(Builtin.Endpoints.KDLatest.Get(RmManaged(e.kdEnv()))),
 		Debug:           false,
 	}
 }
